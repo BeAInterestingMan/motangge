@@ -37,3 +37,8 @@ mybatis-plus:
     map-underscore-to-camel-case: true
   global-config:
     banner: false
+
+minio:
+  url: http://101.132.105.134:9000
+  accessKey: BCIAIOSFODNN7EXAMPLE
+  secretKey: aKalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
