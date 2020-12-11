@@ -45,6 +45,7 @@ public class BookController {
     @GetMapping("image")
     public String image(){
         try {
+
         return     minioClient.presignedGetObject("book","test.jpg");
         } catch (InvalidBucketNameException e) {
             e.printStackTrace();
