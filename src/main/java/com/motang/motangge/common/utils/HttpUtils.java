@@ -1,4 +1,4 @@
-package com.motang.motangge.utils;
+package com.motang.motangge.common.utils;
 
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;

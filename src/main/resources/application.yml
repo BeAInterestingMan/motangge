@@ -1,11 +1,29 @@
 server:
   port: 8888
-  servlet:
-    context-path: /motang
+#  servlet:
+#    context-path: /motang
 spring:
   application:
     name: motangge
 
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  redis:
+    database: 0
+    host: 101.132.105.134
+    port: 6379
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 2000
+        max-wait: -1
+    timeout: 5000
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -42,3 +60,9 @@ minio:
   url: http://101.132.105.134:9000
   accessKey: BCIAIOSFODNN7EXAMPLE
   secretKey: aKalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+
+
+#首页本站推荐小说配置
+index:
+  pageLocation: /www/novel-front #首页静态化保存路径
+  template: v2

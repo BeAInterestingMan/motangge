@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModel;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -19,6 +20,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @TableName("book")
+@ApiModel("书籍表")
 public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -47,6 +49,10 @@ public class Book implements Serializable {
      */
     private Integer status;
 
+    /**
+     * 是否下架: 1 已上架 2下架
+     */
+    private Integer takeDown;
     /**
      * 分类名称
      */
