@@ -6,4 +6,8 @@ package com.motang.motangge.common.constant;
  */
 public interface BookConstants {
     String HTML_PREFIX= "books/index_";
+
+    String MAN_WORK_DIRECTION ="男生分类";
+
+    String WOMEN_WORK_DIRECTION ="女生分类";
 }

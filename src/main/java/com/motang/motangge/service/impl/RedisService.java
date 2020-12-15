@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class RedisService {
 
-    @Autowired
+
     private RedisTemplate<String,Object> redisTemplate;
     /**
      * @description 字符串get

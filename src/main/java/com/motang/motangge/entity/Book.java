@@ -1,14 +1,14 @@
 package com.motang.motangge.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import java.io.Serializable;
-
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
-import lombok.*;
-import lombok.experimental.Accessors;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * @Description 书籍表
@@ -39,7 +39,7 @@ public class Book implements Serializable {
     /**
      * 小说分类ID
      */
-    private String categoryId;
+    private Long categoryId;
 
     /**小说描述*/
     private String bookDescription;
@@ -47,7 +47,7 @@ public class Book implements Serializable {
     /**
      * 小说状态: 1正在更新 2已完结
      */
-    private Integer status;
+    private Integer bookFinal;
 
     /**
      * 是否下架: 1 已上架 2下架
@@ -81,7 +81,7 @@ public class Book implements Serializable {
     /**
      * 是否是vip 1是  2否
      */
-    private String isVip;
+    private Integer isVip;
 
     /**
      * 订阅数
@@ -91,7 +91,7 @@ public class Book implements Serializable {
     /**
      * 总字数
      */
-    private Long totalTextCount;
+    private String totalTextCount;
 
     /**
      * 评论数
@@ -116,12 +116,17 @@ public class Book implements Serializable {
     /**
      * 创建时间
      */
+    @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     /**
      * 更新时间
      */
+    @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
-
+    /**
+     * 状态: 1正常 2已删除
+     */
+    private Integer status;
 
 }

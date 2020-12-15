@@ -1,12 +1,16 @@
 package com.motang.motangge.service.impl;
 
+import com.motang.motangge.common.exception.BookException;
 import com.motang.motangge.entity.Book;
 import com.motang.motangge.mapper.BookMapper;
 import com.motang.motangge.service.IBookService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -15,13 +19,11 @@ import java.util.List;
  * @Date 2020/12/10 20:03
  */
 @Service
+@Slf4j
 public class BookServiceImpl implements IBookService {
 
     @Autowired
     private BookMapper bookMapper;
-
-    @Autowired
-    private RedisService redisService;
 
     @Override
     public Book selectOne(Long id) {
@@ -35,5 +37,15 @@ public class BookServiceImpl implements IBookService {
 
         }
         return null;
+    }
+
+    @Override
+    public void saveBook(Book book) {
+        try {
+            bookMapper.insert(book);
+        }catch (Exception e){
+            log.error("保存书籍信息失败！");
+            throw new BookException("保存书籍信息失败！");
+        }
     }
 }

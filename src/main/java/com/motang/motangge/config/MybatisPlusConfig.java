@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @MapperScan("com.motang.motangge.mapper")
-public class MybatisPlusPageConfig {
+public class MybatisPlusConfig {
     /**
      * @Description 分页插件
      * @author liuhu

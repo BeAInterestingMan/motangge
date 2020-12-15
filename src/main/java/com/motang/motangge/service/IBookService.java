@@ -22,4 +22,11 @@ public interface IBookService  {
      * @return java.util.List<com.motang.motangge.entity.Book>
      */
     List<Book> selectBookList();
+
+    /**
+     * @Description 保存图书
+     * @author liuhu
+     * @Date 2020/12/15 22:15
+     */
+    void saveBook(Book book);
 }

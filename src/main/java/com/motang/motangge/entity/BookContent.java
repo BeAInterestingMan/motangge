@@ -1,15 +1,16 @@
 package com.motang.motangge.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
-
+import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  * @Description 书籍正文表
@@ -17,8 +18,9 @@ import lombok.experimental.Accessors;
  * @Date 2020/12/10 21:17
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @TableName("book_content")
 @ApiModel("书籍正文表")
 public class BookContent implements Serializable {
