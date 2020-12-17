@@ -17,8 +17,8 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * @Description 书籍表 前端控制器
  * @author liuhu
+ * @Description 书籍表 前端控制器
  * @Date 2020/12/10 21:07
  */
 @RestController
@@ -32,9 +32,9 @@ public class BookController {
     private MinioClient minioClient;
 
     @GetMapping("upload")
-    public void upload(){
+    public void upload() {
         try {
-            minioClient.putObject("book","test.jpg","D:\\lh\\test.jpg");
+            minioClient.putObject("book", "test.jpg", "D:\\lh\\test.jpg");
         } catch (InvalidBucketNameException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -43,10 +43,9 @@ public class BookController {
     }
 
     @GetMapping("image")
-    public String image(){
+    public String image() {
         try {
-
-        return     minioClient.presignedGetObject("book","test.jpg");
+            return minioClient.presignedGetObject("book", "test.jpg");
         } catch (InvalidBucketNameException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -55,8 +54,4 @@ public class BookController {
         return null;
     }
 
-    @GetMapping("{id}")
-    public Book book (@PathVariable("id")Long id){
-        return bookService.selectOne(id);
-    }
 }

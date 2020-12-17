@@ -11,8 +11,14 @@ import java.util.List;
  * @Date 2020/12/10 21:15
  */
 public interface IBookService  {
-
-    Book selectOne(Long id);
+    /**
+     * @description 根据书籍名称查找
+     * @author liuhu
+     * @param name
+     * @date 2020/12/16 9:17
+     * @return com.motang.motangge.entity.Book
+     */
+    Book selectByBookName(String name);
     
     /**
      * @description

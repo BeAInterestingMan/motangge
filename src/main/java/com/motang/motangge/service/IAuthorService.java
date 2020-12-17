@@ -14,4 +14,13 @@ public interface IAuthorService{
      * @Date 2020/12/15 22:06
      */
     void saveAuthor(Author authorO);
+
+    /**
+     * @description 根据书籍名称查找
+     * @author liuhu
+     * @param authorName
+     * @date 2020/12/16 9:26
+     * @return com.motang.motangge.entity.Author
+     */
+    Author selectByName(String authorName);
 }

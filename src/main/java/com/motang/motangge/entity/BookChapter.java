@@ -26,7 +26,6 @@ public class BookChapter implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-
     @TableId(value = "id", type = IdType.AUTO)
     @ApiModelProperty(name = "id",value = "章节id")
     private Long id;
@@ -36,9 +35,6 @@ public class BookChapter implements Serializable {
 
     @ApiModelProperty(name = "totalCount",value = "章节描述")
     private String chapterDescription;
-
-    @ApiModelProperty(name = "contentId",value = "正文Id")
-    private Long contentId;
 
     @ApiModelProperty(name = "bookId",value = "小说Id")
     private Long bookId;

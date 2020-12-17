@@ -1,5 +1,7 @@
 package com.motang.motangge.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.motang.motangge.common.commonEnum.WrapperEnum;
 import com.motang.motangge.common.exception.BookException;
 import com.motang.motangge.entity.Book;
 import com.motang.motangge.mapper.BookMapper;
@@ -26,8 +28,8 @@ public class BookServiceImpl implements IBookService {
     private BookMapper bookMapper;
 
     @Override
-    public Book selectOne(Long id) {
-        return bookMapper.selectById(id);
+    public Book selectByBookName(String name) {
+        return bookMapper.selectOne(new QueryWrapper<Book>().eq(WrapperEnum.NAME.getColumn(),name));
     }
 
     @Override

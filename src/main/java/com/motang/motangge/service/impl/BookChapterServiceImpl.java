@@ -1,5 +1,7 @@
 package com.motang.motangge.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.motang.motangge.common.commonEnum.WrapperEnum;
 import com.motang.motangge.common.exception.BookException;
 import com.motang.motangge.entity.BookChapter;
 import com.motang.motangge.mapper.BookChapterMapper;
@@ -7,8 +9,6 @@ import com.motang.motangge.service.IBookChapterService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
 
 /**
  * @Description 章节表 服务实现类
@@ -30,5 +30,10 @@ public class BookChapterServiceImpl implements IBookChapterService {
             log.error("保存书籍章节信息失败！");
             throw new BookException("保存书籍章节信息失败！");
         }
+    }
+
+    @Override
+    public BookChapter selectByName(String chapterName) {
+        return bookChapterMapper.selectOne(new QueryWrapper<BookChapter>().eq(WrapperEnum.NAME.getColumn(),chapterName));
     }
 }

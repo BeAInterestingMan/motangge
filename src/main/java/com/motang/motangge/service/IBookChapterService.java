@@ -14,4 +14,13 @@ public interface IBookChapterService  {
      * @Date 2020/12/15 22:22
      */
     void saveChapter(BookChapter bookChapter);
+
+    /**
+     * @description 通过name获得
+     * @author liuhu
+     * @param chapterName
+     * @date 2020/12/16 9:38
+     * @return com.motang.motangge.entity.BookChapter
+     */
+    BookChapter selectByName(String chapterName);
 }

@@ -1,53 +1,49 @@
 package com.motang.motangge.entity;
 
+import java.time.LocalDateTime;
+import java.io.Serializable;
+
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
+import lombok.experimental.Accessors;
 
 /**
- * @Description 作者表
+ * @description 附件表
  * @author liuhu
- * @Date 2020/12/15 21:56
+ * @Date 2020/12/16 14:02
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ApiModel(value="Author对象", description="作者表")
-public class Author implements Serializable {
+@ApiModel(value="Attachment对象", description="附件表")
+public class Attachment implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "作者ID")
+    @ApiModelProperty(value = "附件ID")
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    @ApiModelProperty(name = "penName",value = "笔名")
-    private String penName;
+    @ApiModelProperty(value = "附件名称")
+    private String name;
 
-    @ApiModelProperty(name = "userId",value = "用户ID")
-    private Long userId;
+    @ApiModelProperty(value = "附件类型")
+    private String type;
 
-    @ApiModelProperty(name = "email",value = "邮箱")
-    private String email;
+    @ApiModelProperty(value = "文件大小")
+    private Long fileSize;
 
-    @ApiModelProperty(name = "sign",value = "签约 1-已签约 2未签约")
-    private Integer sign;
+    @ApiModelProperty(value = "所属域")
+    private String domain;
 
-    @ApiModelProperty(name = "description",value = "个人资料说明")
-    private String description;
-
-    @ApiModelProperty(name = "phone",value = "手机号")
-    private String phone;
-
-    @ApiModelProperty(name = "chatAccount",value = "聊天账号")
-    private String chatAccount;
+    @ApiModelProperty(value = "所属bucket")
+    private String bucket;
 
     @ApiModelProperty(value = "创建时间")
     @TableField(fill = FieldFill.INSERT)

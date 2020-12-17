@@ -5,7 +5,8 @@ package com.motang.motangge.common.commonEnum;
  * @Date 2020/12/15 20:55
  */
 public enum  WrapperEnum {
-    NAME("name","NAME");
+    NAME("NAME","name"),
+    PEN_NAME("PEN_NAME","penName");
 
     ;
     private String column;
